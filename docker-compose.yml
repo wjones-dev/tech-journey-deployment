@@ -1,0 +1,17 @@
+services:
+
+  api:
+    build:
+      context: ../eclipse-workspace/tech-journey-api
+    container_name: tech-journey-api
+    ports:
+      - "8080:8080"
+
+  ui:
+    build:
+      context: ../angular-workspace/tech-journey
+    container_name: tech-journey-ui
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
