@@ -4,6 +4,7 @@ services:
     build:
       context: ../tech-journey-api
     container_name: tech-journey-api
+    restart: unless-stopped
     ports:
       - "8080:8080"
 
@@ -11,6 +12,7 @@ services:
     build:
       context: ../tech-journey
     container_name: tech-journey-ui
+    restart: unless-stopped
     ports:
       - "4200:80"
     depends_on:
